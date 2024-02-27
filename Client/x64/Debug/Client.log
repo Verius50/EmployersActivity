@@ -1,0 +1,5 @@
+﻿  Client.cpp
+F:\C++\VS-Projects\EmployersActivity\Client\Client.cpp(158,37): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+F:\C++\VS-Projects\EmployersActivity\Client\Client.cpp(161,50): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+F:\C++\VS-Projects\EmployersActivity\Client\Client.cpp(98): warning C4715: CtrlHandler: значение возвращается не при всех путях выполнения
+  Client.vcxproj -> F:\C++\VS-Projects\EmployersActivity\x64\Debug\Client.exe

@@ -1,7 +1,7 @@
 # EmployersActivity
 A client-server program that allows you to see the status of employees.
 
-Worcing server with 1 connected client:
+Working server with 1 connected client:
 ![image](https://github.com/Verius50/EmployersActivity/assets/101472727/d1131e3c-171d-4026-ac23-7a44d54d3c6d)
 
 Screenshot from clients desctop:

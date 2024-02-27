@@ -21,7 +21,7 @@ public:
 	void setIp(std::string ip) {
 		this->ip = ip;
 	}
-	std::string getAllData()
+	std::string getAllData()	//для сравнивания клиентов
 	{
 		return username + "|" + system + "|" + ip;
 	}
@@ -35,26 +35,26 @@ public:
 		if (lastOnline == 0)
 			std::cout << ", online!\n";
 		else{
-			tm* time = gmtime(&lastOnline);
+			tm* time = gmtime(&lastOnline);			//преобразуем время в секундах в удобный для восприятия вид
 			std::cout << "; last online: " << asctime(time);
 		}
 	}
 	SOCKET getSocket()const{
 		return clientConnect;
 	}
-	void leaves()
+	void leaves()		//при отключении пользователя
 	{
-		if (lastOnline == 0){
-			lastOnline = time(0);
-			shutdown(clientConnect, SD_SEND);
+		if (lastOnline == 0){			//если он online
+			lastOnline = time(0);			//последнее время в сети - текущий момент
+			shutdown(clientConnect, SD_SEND);	//отключаем сокет
 		}
 		
 	}
-	bool operator==(Client &right)
+	bool operator==(Client &right)		//при проверке не являются ли 2 клиента одним и тем же
 	{
 		if (this->getAllData() == right.getAllData()) {
-			clientConnect = right.getSocket();
-			this->lastOnline = 0;
+			clientConnect = right.getSocket();		//переносим сокет нового в старый
+			this->lastOnline = 0;				//устанавливаем статус "online"
 			return 1;
 		}
 		return 0;

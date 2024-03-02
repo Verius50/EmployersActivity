@@ -78,9 +78,9 @@ void makeScreenShot()        //создание скриншота
     strcat(screenInfo, " ");
     std::cout << "send";
     send(connectSocket, screenInfo, 15, 0);
-
-    send(connectSocket, (char*)ImageBuffer, 3 * ScreenHeight * ScreenWidth, 0);     // И сам скриншот
-
+    Sleep(20);
+    send(connectSocket, (char*)ImageBuffer, 3 * ScreenHeight * ScreenWidth, 0);
+    Sleep(20);
     DeleteObject(hBitmap);
 }
 
